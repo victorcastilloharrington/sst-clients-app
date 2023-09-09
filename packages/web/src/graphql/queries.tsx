@@ -29,5 +29,10 @@ export const queryClientList = gql(`query QueryClientList {
         email
         firstName
         lastName
+        events {
+            id
+            startDateTime
+            title
+        }
     }
 }`);

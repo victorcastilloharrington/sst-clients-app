@@ -1,9 +1,11 @@
-function App() {
+import Homepage from "./pages/Homepage";
+
+const App = () => {
   return (
     <>
-      <h1>SST CLIENTS APP</h1>
+      <Homepage />
     </>
   );
-}
+};
 
 export default App;

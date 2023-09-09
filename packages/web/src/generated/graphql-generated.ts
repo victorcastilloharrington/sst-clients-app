@@ -54,7 +54,7 @@ export type FindClientByIdQuery = { __typename?: 'Query', findClientById?: { __t
 export type QueryClientListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type QueryClientListQuery = { __typename?: 'Query', queryClientList?: Array<{ __typename?: 'Client', id: string, email: string, firstName: string, lastName: string }> | null };
+export type QueryClientListQuery = { __typename?: 'Query', queryClientList?: Array<{ __typename?: 'Client', id: string, email: string, firstName: string, lastName: string, events: Array<{ __typename?: 'Event', id: string, startDateTime: string, title: string }> }> | null };
 
 
 export const FindClientByIdDocument = gql`
@@ -107,6 +107,11 @@ export const QueryClientListDocument = gql`
     email
     firstName
     lastName
+    events {
+      id
+      startDateTime
+      title
+    }
   }
 }
     `;
