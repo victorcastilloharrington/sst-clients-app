@@ -1,3 +1,6 @@
+/**
+ * Define types to be used by schema generator
+ */
 export type Client = {
   id: string;
   firstName: string;

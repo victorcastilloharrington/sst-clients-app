@@ -2,6 +2,9 @@ import SchemaBuilder from "@pothos/core";
 import { Client, Event } from "./types";
 import { CLIENTS } from "./constants";
 
+/**
+ * Instantiante Pothos schema builder object
+ */
 const builder = new SchemaBuilder<{
   Objects: {
     Client: Client;
@@ -12,6 +15,10 @@ const builder = new SchemaBuilder<{
   };
 }>({});
 
+/**
+ * Define client object type for pothos
+ * based on TS type for schema usage
+ */
 builder.objectType("Client", {
   fields: (t) => ({
     id: t.exposeString("id"),
@@ -25,6 +32,10 @@ builder.objectType("Client", {
   }),
 });
 
+/**
+ * Define even object type for pothos
+ * based on TS type for schema usage
+ */
 builder.objectType("Event", {
   fields: (t) => ({
     id: t.exposeString("id"),
@@ -33,6 +44,10 @@ builder.objectType("Event", {
   }),
 });
 
+/**
+ * Define queries object type for pothos
+ * based on previously defined objectType types for schema usage
+ */
 builder.queryType({
   fields: (t) => ({
     findClientById: t.field({
@@ -59,4 +74,7 @@ builder.queryType({
   }),
 });
 
+/**
+ * Return schema object
+ */
 export const schema = builder.toSchema();
