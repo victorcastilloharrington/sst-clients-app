@@ -1,25 +1,33 @@
 import { Event } from "../generated/graphql-generated";
+import {
+  Table,
+  TableHead,
+  TableRow,
+  TableHeader,
+  TableBody,
+  TableCell,
+} from "@/components/ui/table";
 
 const ClientEvents: React.FC<{ events: Event[] }> = ({ events }) => {
   return (
-    <table>
-      <thead>
-        <th>
-          <td>Event</td>
-          <td>Date</td>
-        </th>
-      </thead>
-      <tbody>
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Event</TableHead>
+          <TableHead>Date</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
         {events.map((event) => {
           return (
-            <tr>
-              <td>{event.title}</td>
-              <td>{event.startDateTime}</td>
-            </tr>
+            <TableRow>
+              <TableCell>{event.title}</TableCell>
+              <TableCell>{event.startDateTime}</TableCell>
+            </TableRow>
           );
         })}
-      </tbody>
-    </table>
+      </TableBody>
+    </Table>
   );
 };
 
