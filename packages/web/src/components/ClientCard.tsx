@@ -1,11 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import { Client } from "../generated/graphql-generated";
+import ClientDetails from "./ClientDetails";
 
 const ClientCard: React.FC<{ client: Client }> = ({ client }) => {
+  const navigate = useNavigate();
+  const handleClick = () => navigate(`/client/${client.id}`);
   return (
     <div>
-      <h3>{`${client.firstName} ${client.lastName}`}</h3>
-      <p>{client.email}</p>
-      <button>Go To Detail</button>
+      <ClientDetails client={client} />
+      <button onClick={handleClick}>Go To Detail</button>
     </div>
   );
 };
