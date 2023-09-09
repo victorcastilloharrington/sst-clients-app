@@ -22,6 +22,8 @@ const Client = () => {
         <div>
           <h1>Client Details</h1>
           <ClientDetails client={data.findClientById} />
+
+          <h3>Client History</h3>
           <ClientEvents events={data.findClientById.events} />
         </div>
       </>
