@@ -1,0 +1,18 @@
+type Client {
+  email: String!
+  events: [Event!]!
+  firstName: String!
+  id: String!
+  lastName: String!
+}
+
+type Event {
+  id: String!
+  startDateTime: String!
+  title: String!
+}
+
+type Query {
+  findClientById(id: ID!): Client
+  queryClientList: [Client!]
+}

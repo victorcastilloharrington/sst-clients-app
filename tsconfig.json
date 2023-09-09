@@ -4,5 +4,6 @@
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "node"
-  }
+  },
+  "esModuleInterop": true
 }
