@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App.tsx";
 
 const client = new ApolloClient({
@@ -11,7 +12,9 @@ const client = new ApolloClient({
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </ApolloProvider>
   </React.StrictMode>
 );
