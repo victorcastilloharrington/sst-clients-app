@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { BrowserRouter as Router } from "react-router-dom";
+import "./index.css";
 import App from "./App.tsx";
 
 const client = new ApolloClient({
